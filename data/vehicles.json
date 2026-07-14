@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "customerId": 1,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2015,
+    "licensePlate": "LJ-001-AA"
+  },
+  {
+    "id": 2,
+    "customerId": 2,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2016,
+    "licensePlate": "LJ-002-AA"
+  },
+  {
+    "id": 3,
+    "customerId": 3,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2017,
+    "licensePlate": "LJ-003-AA"
+  },
+  {
+    "id": 4,
+    "customerId": 4,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2018,
+    "licensePlate": "LJ-004-AA"
+  },
+  {
+    "id": 5,
+    "customerId": 5,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2019,
+    "licensePlate": "LJ-005-AA"
+  },
+  {
+    "id": 6,
+    "customerId": 6,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2020,
+    "licensePlate": "LJ-006-AA"
+  },
+  {
+    "id": 7,
+    "customerId": 7,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2021,
+    "licensePlate": "LJ-007-AA"
+  },
+  {
+    "id": 8,
+    "customerId": 8,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2022,
+    "licensePlate": "LJ-008-AA"
+  },
+  {
+    "id": 9,
+    "customerId": 9,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2023,
+    "licensePlate": "LJ-009-AA"
+  },
+  {
+    "id": 10,
+    "customerId": 10,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2024,
+    "licensePlate": "LJ-010-AA"
+  },
+  {
+    "id": 11,
+    "customerId": 11,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2015,
+    "licensePlate": "LJ-011-AA"
+  },
+  {
+    "id": 12,
+    "customerId": 12,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2016,
+    "licensePlate": "LJ-012-AA"
+  },
+  {
+    "id": 13,
+    "customerId": 13,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2017,
+    "licensePlate": "LJ-013-AA"
+  },
+  {
+    "id": 14,
+    "customerId": 14,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2018,
+    "licensePlate": "LJ-014-AA"
+  },
+  {
+    "id": 15,
+    "customerId": 15,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2019,
+    "licensePlate": "LJ-015-AA"
+  },
+  {
+    "id": 16,
+    "customerId": 16,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2020,
+    "licensePlate": "LJ-016-AA"
+  },
+  {
+    "id": 17,
+    "customerId": 17,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2021,
+    "licensePlate": "LJ-017-AA"
+  },
+  {
+    "id": 18,
+    "customerId": 18,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2022,
+    "licensePlate": "LJ-018-AA"
+  },
+  {
+    "id": 19,
+    "customerId": 19,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2023,
+    "licensePlate": "LJ-019-AA"
+  },
+  {
+    "id": 20,
+    "customerId": 20,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2024,
+    "licensePlate": "LJ-020-AA"
+  },
+  {
+    "id": 21,
+    "customerId": 21,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2015,
+    "licensePlate": "LJ-021-AA"
+  },
+  {
+    "id": 22,
+    "customerId": 22,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2016,
+    "licensePlate": "LJ-022-AA"
+  },
+  {
+    "id": 23,
+    "customerId": 23,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2017,
+    "licensePlate": "LJ-023-AA"
+  },
+  {
+    "id": 24,
+    "customerId": 24,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2018,
+    "licensePlate": "LJ-024-AA"
+  },
+  {
+    "id": 25,
+    "customerId": 25,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2019,
+    "licensePlate": "LJ-025-AA"
+  },
+  {
+    "id": 26,
+    "customerId": 26,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2020,
+    "licensePlate": "LJ-026-AA"
+  },
+  {
+    "id": 27,
+    "customerId": 27,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2021,
+    "licensePlate": "LJ-027-AA"
+  },
+  {
+    "id": 28,
+    "customerId": 28,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2022,
+    "licensePlate": "LJ-028-AA"
+  },
+  {
+    "id": 29,
+    "customerId": 29,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2023,
+    "licensePlate": "LJ-029-AA"
+  },
+  {
+    "id": 30,
+    "customerId": 30,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2024,
+    "licensePlate": "LJ-030-AA"
+  },
+  {
+    "id": 31,
+    "customerId": 31,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2015,
+    "licensePlate": "LJ-031-AA"
+  },
+  {
+    "id": 32,
+    "customerId": 32,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2016,
+    "licensePlate": "LJ-032-AA"
+  },
+  {
+    "id": 33,
+    "customerId": 33,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2017,
+    "licensePlate": "LJ-033-AA"
+  },
+  {
+    "id": 34,
+    "customerId": 34,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2018,
+    "licensePlate": "LJ-034-AA"
+  },
+  {
+    "id": 35,
+    "customerId": 35,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2019,
+    "licensePlate": "LJ-035-AA"
+  },
+  {
+    "id": 36,
+    "customerId": 36,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2020,
+    "licensePlate": "LJ-036-AA"
+  },
+  {
+    "id": 37,
+    "customerId": 37,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2021,
+    "licensePlate": "LJ-037-AA"
+  },
+  {
+    "id": 38,
+    "customerId": 38,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2022,
+    "licensePlate": "LJ-038-AA"
+  },
+  {
+    "id": 39,
+    "customerId": 39,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2023,
+    "licensePlate": "LJ-039-AA"
+  },
+  {
+    "id": 40,
+    "customerId": 40,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2024,
+    "licensePlate": "LJ-040-AA"
+  },
+  {
+    "id": 41,
+    "customerId": 41,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2015,
+    "licensePlate": "LJ-041-AA"
+  },
+  {
+    "id": 42,
+    "customerId": 42,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2016,
+    "licensePlate": "LJ-042-AA"
+  },
+  {
+    "id": 43,
+    "customerId": 43,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2017,
+    "licensePlate": "LJ-043-AA"
+  },
+  {
+    "id": 44,
+    "customerId": 44,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2018,
+    "licensePlate": "LJ-044-AA"
+  },
+  {
+    "id": 45,
+    "customerId": 45,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2019,
+    "licensePlate": "LJ-045-AA"
+  },
+  {
+    "id": 46,
+    "customerId": 46,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2020,
+    "licensePlate": "LJ-046-AA"
+  },
+  {
+    "id": 47,
+    "customerId": 47,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2021,
+    "licensePlate": "LJ-047-AA"
+  },
+  {
+    "id": 48,
+    "customerId": 48,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2022,
+    "licensePlate": "LJ-048-AA"
+  },
+  {
+    "id": 49,
+    "customerId": 49,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2023,
+    "licensePlate": "LJ-049-AA"
+  },
+  {
+    "id": 50,
+    "customerId": 50,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2024,
+    "licensePlate": "LJ-050-AA"
+  },
+  {
+    "id": 51,
+    "customerId": 51,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2015,
+    "licensePlate": "LJ-051-AA"
+  },
+  {
+    "id": 52,
+    "customerId": 52,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2016,
+    "licensePlate": "LJ-052-AA"
+  },
+  {
+    "id": 53,
+    "customerId": 53,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2017,
+    "licensePlate": "LJ-053-AA"
+  },
+  {
+    "id": 54,
+    "customerId": 54,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2018,
+    "licensePlate": "LJ-054-AA"
+  },
+  {
+    "id": 55,
+    "customerId": 55,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2019,
+    "licensePlate": "LJ-055-AA"
+  },
+  {
+    "id": 56,
+    "customerId": 56,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2020,
+    "licensePlate": "LJ-056-AA"
+  },
+  {
+    "id": 57,
+    "customerId": 57,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2021,
+    "licensePlate": "LJ-057-AA"
+  },
+  {
+    "id": 58,
+    "customerId": 58,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2022,
+    "licensePlate": "LJ-058-AA"
+  },
+  {
+    "id": 59,
+    "customerId": 59,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2023,
+    "licensePlate": "LJ-059-AA"
+  },
+  {
+    "id": 60,
+    "customerId": 60,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2024,
+    "licensePlate": "LJ-060-AA"
+  },
+  {
+    "id": 61,
+    "customerId": 61,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2015,
+    "licensePlate": "LJ-061-AA"
+  },
+  {
+    "id": 62,
+    "customerId": 62,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2016,
+    "licensePlate": "LJ-062-AA"
+  },
+  {
+    "id": 63,
+    "customerId": 63,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2017,
+    "licensePlate": "LJ-063-AA"
+  },
+  {
+    "id": 64,
+    "customerId": 64,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2018,
+    "licensePlate": "LJ-064-AA"
+  },
+  {
+    "id": 65,
+    "customerId": 65,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2019,
+    "licensePlate": "LJ-065-AA"
+  },
+  {
+    "id": 66,
+    "customerId": 66,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2020,
+    "licensePlate": "LJ-066-AA"
+  },
+  {
+    "id": 67,
+    "customerId": 67,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2021,
+    "licensePlate": "LJ-067-AA"
+  },
+  {
+    "id": 68,
+    "customerId": 68,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2022,
+    "licensePlate": "LJ-068-AA"
+  },
+  {
+    "id": 69,
+    "customerId": 69,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2023,
+    "licensePlate": "LJ-069-AA"
+  },
+  {
+    "id": 70,
+    "customerId": 70,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2024,
+    "licensePlate": "LJ-070-AA"
+  },
+  {
+    "id": 71,
+    "customerId": 71,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2015,
+    "licensePlate": "LJ-071-AA"
+  },
+  {
+    "id": 72,
+    "customerId": 72,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2016,
+    "licensePlate": "LJ-072-AA"
+  },
+  {
+    "id": 73,
+    "customerId": 73,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2017,
+    "licensePlate": "LJ-073-AA"
+  },
+  {
+    "id": 74,
+    "customerId": 74,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2018,
+    "licensePlate": "LJ-074-AA"
+  },
+  {
+    "id": 75,
+    "customerId": 75,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2019,
+    "licensePlate": "LJ-075-AA"
+  },
+  {
+    "id": 76,
+    "customerId": 76,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2020,
+    "licensePlate": "LJ-076-AA"
+  },
+  {
+    "id": 77,
+    "customerId": 77,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2021,
+    "licensePlate": "LJ-077-AA"
+  },
+  {
+    "id": 78,
+    "customerId": 78,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2022,
+    "licensePlate": "LJ-078-AA"
+  },
+  {
+    "id": 79,
+    "customerId": 79,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2023,
+    "licensePlate": "LJ-079-AA"
+  },
+  {
+    "id": 80,
+    "customerId": 80,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2024,
+    "licensePlate": "LJ-080-AA"
+  },
+  {
+    "id": 81,
+    "customerId": 81,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2015,
+    "licensePlate": "LJ-081-AA"
+  },
+  {
+    "id": 82,
+    "customerId": 82,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2016,
+    "licensePlate": "LJ-082-AA"
+  },
+  {
+    "id": 83,
+    "customerId": 83,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2017,
+    "licensePlate": "LJ-083-AA"
+  },
+  {
+    "id": 84,
+    "customerId": 84,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2018,
+    "licensePlate": "LJ-084-AA"
+  },
+  {
+    "id": 85,
+    "customerId": 85,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2019,
+    "licensePlate": "LJ-085-AA"
+  },
+  {
+    "id": 86,
+    "customerId": 86,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2020,
+    "licensePlate": "LJ-086-AA"
+  },
+  {
+    "id": 87,
+    "customerId": 87,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2021,
+    "licensePlate": "LJ-087-AA"
+  },
+  {
+    "id": 88,
+    "customerId": 88,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2022,
+    "licensePlate": "LJ-088-AA"
+  },
+  {
+    "id": 89,
+    "customerId": 89,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2023,
+    "licensePlate": "LJ-089-AA"
+  },
+  {
+    "id": 90,
+    "customerId": 90,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2024,
+    "licensePlate": "LJ-090-AA"
+  },
+  {
+    "id": 91,
+    "customerId": 91,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2015,
+    "licensePlate": "LJ-091-AA"
+  },
+  {
+    "id": 92,
+    "customerId": 92,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2016,
+    "licensePlate": "LJ-092-AA"
+  },
+  {
+    "id": 93,
+    "customerId": 93,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2017,
+    "licensePlate": "LJ-093-AA"
+  },
+  {
+    "id": 94,
+    "customerId": 94,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2018,
+    "licensePlate": "LJ-094-AA"
+  },
+  {
+    "id": 95,
+    "customerId": 95,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2019,
+    "licensePlate": "LJ-095-AA"
+  },
+  {
+    "id": 96,
+    "customerId": 96,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2020,
+    "licensePlate": "LJ-096-AA"
+  },
+  {
+    "id": 97,
+    "customerId": 97,
+    "brand": "Renault",
+    "model": "Clio",
+    "year": 2021,
+    "licensePlate": "LJ-097-AA"
+  },
+  {
+    "id": 98,
+    "customerId": 98,
+    "brand": "Skoda",
+    "model": "Octavia",
+    "year": 2022,
+    "licensePlate": "LJ-098-AA"
+  },
+  {
+    "id": 99,
+    "customerId": 99,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2023,
+    "licensePlate": "LJ-099-AA"
+  },
+  {
+    "id": 100,
+    "customerId": 100,
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2024,
+    "licensePlate": "LJ-100-AA"
+  }
+]

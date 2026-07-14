@@ -1,0 +1,50 @@
+{
+  "info": {
+    "name": "Total.js CRUD AFTER",
+    "description": "CRUD requests equivalent to BEFORE plus architecture error examples.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:8000/api", "type": "string" }],
+  "item": [
+    {
+      "name": "Customers",
+      "item": [
+        { "name": "Get all customers", "request": { "method": "GET", "url": "{{baseUrl}}/customers" } },
+        { "name": "Get customer by ID", "request": { "method": "GET", "url": "{{baseUrl}}/customers/1" } },
+        { "name": "Create customer", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Ana\",\n  \"lastName\": \"Kranjc\",\n  \"email\": \"ana.kranjc@example.com\",\n  \"phone\": \"+38640123456\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/customers" } },
+        { "name": "Update customer", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Gregor\",\n  \"lastName\": \"Novak\",\n  \"email\": \"gregor.novak@example.com\",\n  \"phone\": \"+38640111222\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/customers/1" } },
+        { "name": "Delete customer", "request": { "method": "DELETE", "url": "{{baseUrl}}/customers/101" } }
+      ]
+    },
+    {
+      "name": "Vehicles",
+      "item": [
+        { "name": "Get all vehicles", "request": { "method": "GET", "url": "{{baseUrl}}/vehicles" } },
+        { "name": "Get vehicle by ID", "request": { "method": "GET", "url": "{{baseUrl}}/vehicles/1" } },
+        { "name": "Create vehicle", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"customerId\": 1,\n  \"brand\": \"Volvo\",\n  \"model\": \"V60\",\n  \"year\": 2022,\n  \"licensePlate\": \"LJ-V60-01\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/vehicles" } },
+        { "name": "Update vehicle", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"customerId\": 1,\n  \"brand\": \"Volkswagen\",\n  \"model\": \"Golf\",\n  \"year\": 2020,\n  \"licensePlate\": \"CE-AA-001\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/vehicles/1" } },
+        { "name": "Delete vehicle", "request": { "method": "DELETE", "url": "{{baseUrl}}/vehicles/101" } }
+      ]
+    },
+    {
+      "name": "Notes",
+      "item": [
+        { "name": "Get all notes", "request": { "method": "GET", "url": "{{baseUrl}}/notes" } },
+        { "name": "Get note by ID", "request": { "method": "GET", "url": "{{baseUrl}}/notes/1" } },
+        { "name": "Create note", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"customerId\": 1,\n  \"vehicleId\": 1,\n  \"content\": \"Redni servis vozila.\",\n  \"createdAt\": \"2026-02-01T10:00:00.000Z\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/notes" } },
+        { "name": "Update note", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"customerId\": 1,\n  \"vehicleId\": 1,\n  \"content\": \"Redni servis je zaključen.\",\n  \"createdAt\": \"2026-01-01T10:00:00.000Z\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/notes/1" } },
+        { "name": "Delete note", "request": { "method": "DELETE", "url": "{{baseUrl}}/notes/1" } }
+      ]
+    },
+    {
+      "name": "Expected errors",
+      "item": [
+        { "name": "Invalid customer", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"firstName\":\"\"}" }, "url": "{{baseUrl}}/customers" } },
+        { "name": "Missing customer", "request": { "method": "GET", "url": "{{baseUrl}}/customers/999999" } },
+        { "name": "Vehicle with invalid customer", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"customerId\":999999,\"brand\":\"Volvo\",\"model\":\"V60\",\"year\":2022,\"licensePlate\":\"BAD\"}" }, "url": "{{baseUrl}}/vehicles" } },
+        { "name": "Note with invalid relation", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"customerId\":2,\"vehicleId\":1,\"content\":\"Invalid\"}" }, "url": "{{baseUrl}}/notes" } },
+        { "name": "Delete customer with vehicles", "request": { "method": "DELETE", "url": "{{baseUrl}}/customers/1" } }
+      ]
+    }
+  ]
+}

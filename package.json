@@ -1,0 +1,16 @@
+{
+  "name": "totaljs-crud-after",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Architecturally layered Total.js v5 CRUD API backed by local JSON files.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js --debug",
+    "test": "node --test",
+    "test:unit": "node --test tests/unit/services.test.js tests/unit/strategy-repository.test.js",
+    "test:integration": "node --test tests/integration/api.test.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": { "total5": "0.0.18" }
+}
