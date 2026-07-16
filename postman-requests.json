@@ -10,6 +10,13 @@
       "name": "Customers",
       "item": [
         { "name": "Get all customers", "request": { "method": "GET", "url": "{{baseUrl}}/customers" } },
+        { "name": "Get all customers with details", "request": { "method": "GET", "url": "{{baseUrl}}/customers-with-details" } },
+        { "name": "Get customer by ID with details", "request": { "method": "GET", "url": "{{baseUrl}}/customers/1/details" } },
+        { "name": "Sort customers by date ascending", "request": { "method": "GET", "url": "{{baseUrl}}/customers/sort/by-date?order=asc" } },
+        { "name": "Sort customers by date descending", "request": { "method": "GET", "url": "{{baseUrl}}/customers/sort/by-date?order=desc" } },
+        { "name": "Filter customers by month", "request": { "method": "GET", "url": "{{baseUrl}}/customers/filter/by-month?month=1" } },
+        { "name": "Filter customers by month and year", "request": { "method": "GET", "url": "{{baseUrl}}/customers/filter/by-month?month=1&year=2026" } },
+        { "name": "Search customers", "request": { "method": "GET", "url": "{{baseUrl}}/customers/search?q=customer" } },
         { "name": "Get customer by ID", "request": { "method": "GET", "url": "{{baseUrl}}/customers/1" } },
         { "name": "Create customer", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Ana\",\n  \"lastName\": \"Kranjc\",\n  \"email\": \"ana.kranjc@example.com\",\n  \"phone\": \"+38640123456\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/customers" } },
         { "name": "Update customer", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Gregor\",\n  \"lastName\": \"Novak\",\n  \"email\": \"gregor.novak@example.com\",\n  \"phone\": \"+38640111222\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/customers/1" } },
@@ -20,6 +27,7 @@
       "name": "Vehicles",
       "item": [
         { "name": "Get all vehicles", "request": { "method": "GET", "url": "{{baseUrl}}/vehicles" } },
+        { "name": "Search vehicles", "request": { "method": "GET", "url": "{{baseUrl}}/vehicles/search?q=golf" } },
         { "name": "Get vehicle by ID", "request": { "method": "GET", "url": "{{baseUrl}}/vehicles/1" } },
         { "name": "Create vehicle", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"customerId\": 1,\n  \"brand\": \"Volvo\",\n  \"model\": \"V60\",\n  \"year\": 2022,\n  \"licensePlate\": \"LJ-V60-01\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/vehicles" } },
         { "name": "Update vehicle", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"customerId\": 1,\n  \"brand\": \"Volkswagen\",\n  \"model\": \"Golf\",\n  \"year\": 2020,\n  \"licensePlate\": \"CE-AA-001\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/vehicles/1" } },

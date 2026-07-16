@@ -22,6 +22,53 @@ before(async () => {
 });
 after(async () => { if (server) server.kill(); if (temp) await fs.rm(temp, { recursive: true, force: true }); });
 
+test('customer detail views include all requested relations', async () => {
+	let r = await request('GET', '/customers-with-details');
+	assert.equal(r.status, 200); assert.equal(r.body.count, 100); assert.equal(r.body.data.length, 100);
+	assert.ok(Array.isArray(r.body.data[0].vehicles)); assert.ok(Array.isArray(r.body.data[0].notes));
+	r = await request('GET', '/customers/1/details');
+	assert.equal(r.status, 200); assert.equal(r.body.data.id, 1); assert.equal(r.body.data.vehicles[0].customerId, 1); assert.equal(r.body.data.notes[0].customerId, 1);
+	r = await request('GET', '/customers/999999/details');
+	assert.equal(r.status, 404); assert.equal(r.body.error.code, 'CUSTOMER_NOT_FOUND');
+});
+test('customers sort by latest note date in both directions', async () => {
+	let r = await request('GET', '/customers/sort/by-date?order=asc');
+	assert.equal(r.status, 200); assert.equal(r.body.data[0].id, 1); assert.ok(r.body.data[0].latestNoteDate);
+	r = await request('GET', '/customers/sort/by-date?order=desc');
+	assert.equal(r.status, 200); assert.equal(r.body.data[0].id, 100);
+	r = await request('GET', '/customers/sort/by-date?order=invalid');
+	assert.equal(r.status, 400); assert.equal(r.body.error.code, 'INVALID_SORT_ORDER');
+});
+test('customers filter by UTC note month and validate parameters', async () => {
+	let r = await request('GET', '/customers/filter/by-month?month=1');
+	assert.equal(r.status, 200); assert.equal(r.body.count, 100); assert.ok(r.body.data[0].matchingNotes.length);
+	r = await request('GET', '/customers/filter/by-month?month=1&year=2026');
+	assert.equal(r.status, 200); assert.equal(r.body.count, 100);
+	r = await request('GET', '/customers/filter/by-month?month=13');
+	assert.equal(r.status, 400); assert.equal(r.body.error.code, 'INVALID_MONTH');
+	r = await request('GET', '/customers/filter/by-month?month=1&year=26');
+	assert.equal(r.status, 400); assert.equal(r.body.error.code, 'INVALID_YEAR');
+});
+test('customer search is partial, case-insensitive and validates q', async () => {
+	let r = await request('GET', '/customers/search?q=customer1');
+	assert.equal(r.status, 200); assert.ok(r.body.count > 0); assert.match(r.body.data[0].firstName, /Customer1/i);
+	r = await request('GET', '/customers/search?q=EXAMPLE1');
+	assert.equal(r.status, 200); assert.ok(r.body.count > 0);
+	r = await request('GET', '/customers/search?q=not-present');
+	assert.equal(r.status, 200); assert.equal(r.body.count, 0); assert.deepEqual(r.body.data, []);
+	r = await request('GET', '/customers/search?q=');
+	assert.equal(r.status, 400); assert.equal(r.body.error.code, 'SEARCH_QUERY_REQUIRED');
+});
+test('vehicle search covers brand, model, plate, year and empty results', async () => {
+	for (const query of ['VOLKSWAGEN', 'golf', 'LJ-001', '2015', '1']) {
+		const r = await request('GET', `/vehicles/search?q=${encodeURIComponent(query)}`);
+		assert.equal(r.status, 200); assert.ok(r.body.count > 0, query);
+	}
+	let r = await request('GET', '/vehicles/search?q=not-present');
+	assert.equal(r.status, 200); assert.equal(r.body.count, 0); assert.deepEqual(r.body.data, []);
+	r = await request('GET', '/vehicles/search');
+	assert.equal(r.status, 400); assert.equal(r.body.error.code, 'SEARCH_QUERY_REQUIRED');
+});
 test('customer CRUD, envelope, count, request id, validation and 404', async () => {
 	let r = await request('GET', '/customers', undefined, { 'x-request-id': 'integration-id' });
 	assert.equal(r.status, 200); assert.equal(r.body.count, 100); assert.equal(r.body.requestId, 'integration-id'); assert.equal(r.headers.get('x-request-id'), 'integration-id');

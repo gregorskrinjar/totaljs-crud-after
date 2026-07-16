@@ -1,6 +1,6 @@
 # Total.js CRUD AFTER
 
-Arhitekturno izboljšana, vendar funkcionalno enaka različica projekta `totaljs-crud-before`. Aplikacija ponuja isti REST CRUD za customers, vehicles in notes, uporablja isti port, poti, modele, relacije in determinističnih 100 + 100 + 100 začetnih zapisov. AFTER ne dodaja poslovnih funkcionalnosti; izboljšuje notranjo organizacijo, validacijo, obravnavo napak in testabilnost.
+Arhitekturno izboljšana različica projekta `totaljs-crud-before`. Aplikacija ohranja celoten REST CRUD za customers, vehicles in notes, isti port, modele, relacije ter determinističnih 100 + 100 + 100 začetnih zapisov. Dodatni read-only pogledi omogočajo združevanje, sortiranje, filtriranje in iskanje brez spreminjanja podatkovnih modelov ali seed podatkov.
 
 ## Zahteve in zagon
 
@@ -57,10 +57,47 @@ Vehicle mora kazati na obstoječega customerja. Note mora kazati na obstoječa c
 
 `seed/seedData.js` reproducira generator BEFORE: 100 customerjev, 100 vehicles in 100 notes z ID-ji 1–100 ter povezavo `customer N → vehicle N → note N`. Seed uporablja Repository Factory in podatke zapiše samo, kadar je posamezna JSON zbirka prazna, zato ponovni zagon ne podvaja zapisov. Shramba so izključno `data/customers.json`, `data/vehicles.json` in `data/notes.json`.
 
+## Dodatni read-only endpointi
+
+| Endpoint | Query parametri | Namen |
+|---|---|---|
+| `GET /api/customers-with-details` | brez | Vseh 100 customerjev z nizoma `vehicles` in `notes`. |
+| `GET /api/customers/{id}/details` | pozitivni `{id}` | Posamezen customer z vozili in opombami; manjkajoč zapis vrne 404. |
+| `GET /api/customers/sort/by-date` | `order=asc\|desc`, privzeto `desc` | Sortira po `latestNoteDate`; customerji brez opomb so na koncu. |
+| `GET /api/customers/filter/by-month` | obvezni `month=1..12`, neobvezni štirimestni `year` | Vrne customerje in njihove `matchingNotes`, primerjane v UTC. |
+| `GET /api/customers/search` | obvezni neprazni `q` | Delno, neobčutljivo iskanje po imenu, priimku, e-pošti in telefonu. |
+| `GET /api/vehicles/search` | obvezni neprazni `q` | Delno iskanje po znamki, modelu in registraciji; celo število išče tudi `customerId` in `year`. |
+
+Neveljavni parametri vrnejo status 400 in kode `INVALID_SORT_ORDER`, `INVALID_MONTH`, `INVALID_YEAR` ali `SEARCH_QUERY_REQUIRED`. Iskanje brez zadetkov vrne status 200, `data: []` in `count: 0`.
+
+Primer odziva skupnega pogleda:
+
+```json
+{
+  "success": true,
+  "data": [{ "id": 1, "firstName": "Customer1", "lastName": "Example1", "email": "customer1@example.com", "phone": "+38640100001", "vehicles": [], "notes": [] }],
+  "count": 100,
+  "requestId": "..."
+}
+```
+
+Primeri:
+
+```bash
+curl "http://localhost:8000/api/customers-with-details"
+curl "http://localhost:8000/api/customers/1/details"
+curl "http://localhost:8000/api/customers/sort/by-date?order=desc"
+curl "http://localhost:8000/api/customers/filter/by-month?month=1&year=2026"
+curl "http://localhost:8000/api/customers/search?q=customer1"
+curl "http://localhost:8000/api/vehicles/search?q=golf"
+```
+
+Action sloj samo prebere path/query parametre in uporabi skupni response helper. Validacija query parametrov, trije enkratni Repository dostopi za skupni pogled, združevanje z `Map`, sortiranje, UTC filtriranje in iskanje so v Service sloju. Repository ostaja generičen in brez poslovne logike.
+
 ## Struktura in vzorci
 
 - `actions/`: tanke Total.js `NEWACTION()` prilagoditve; sprejmejo vhod, pokličejo storitev in oblikujejo odziv.
-- `definitions/routes.js`: vseh 15 `ROUTE()` definicij in pripeti middleware.
+- `definitions/routes.js`: vseh 21 CRUD in read-only `ROUTE()` definicij ter pripeti middleware; statične poti so pred dinamičnimi `{id}` potmi.
 - `definitions/dependencies.js`: composition root; enkrat sestavi strategijo, factory, repozitorije, event bus, listenerje in storitve.
 - `repositories/`: Repository pattern izolira ves `fs/promises`. `BaseJsonRepository` ponuja `findAll`, `findById`, `create`, `update`, `delete`, `exists`, zaporedno vrsto mutacij in atomaren zapis temp-datoteka → rename. Konkretni repozitoriji določijo tip. Cena je dodaten abstrakcijski sloj.
 - `services/`: Service Layer hrani relacijska in brisalna poslovna pravila ter dogodke, zato so akcije kratke in storitve enostavno testiramo z in-memory repozitoriji. Cena je več modulov in ročno ožičenje.
@@ -76,4 +113,4 @@ V BEFORE so akcije neposredno brale datoteke, ustvarjale ID-je, preverjale relac
 
 ## Postman in merjenje
 
-`postman-requests.json` vsebuje vseh 15 enakih CRUD zahtev ter zahtevane primere napak; `baseUrl` je `http://localhost:8000/api`. Za primerjalno merjenje je neposredno uporaben `GET /api/customers`; ni umetnih zakasnitev niti dodatnega poslovnega endpointa.
+`postman-requests.json` vsebuje vseh 15 CRUD zahtev, šest novih read-only endpointov ter zahtevane primere napak; `baseUrl` je `http://localhost:8000/api`. Za primerjalno merjenje je še vedno neposredno uporaben `GET /api/customers`; ni umetnih zakasnitev.
