@@ -1,0 +1,163 @@
+{
+	"routes": [
+		{
+			"method": "GET",
+			"url": "/api/customers/"
+		},
+		{
+			"method": "GET",
+			"url": "/api/customers-with-details/"
+		},
+		{
+			"method": "GET",
+			"url": "/api/customers/search/"
+		},
+		{
+			"method": "GET",
+			"url": "/api/customers/sort/by-date/"
+		},
+		{
+			"method": "GET",
+			"url": "/api/customers/filter/by-month/"
+		},
+		{
+			"method": "GET",
+			"url": "/api/customers/{id}/details/",
+			"params": "id:string"
+		},
+		{
+			"method": "GET",
+			"url": "/api/customers/{id}/",
+			"params": "id:string"
+		},
+		{
+			"method": "POST",
+			"url": "/api/customers/"
+		},
+		{
+			"method": "PUT",
+			"url": "/api/customers/{id}/",
+			"params": "id:string"
+		},
+		{
+			"method": "DELETE",
+			"url": "/api/customers/{id}/",
+			"params": "id:string"
+		},
+		{
+			"method": "GET",
+			"url": "/api/vehicles/"
+		},
+		{
+			"method": "GET",
+			"url": "/api/vehicles/search/"
+		},
+		{
+			"method": "GET",
+			"url": "/api/vehicles/{id}/",
+			"params": "id:string"
+		},
+		{
+			"method": "POST",
+			"url": "/api/vehicles/"
+		},
+		{
+			"method": "PUT",
+			"url": "/api/vehicles/{id}/",
+			"params": "id:string"
+		},
+		{
+			"method": "DELETE",
+			"url": "/api/vehicles/{id}/",
+			"params": "id:string"
+		},
+		{
+			"method": "GET",
+			"url": "/api/notes/"
+		},
+		{
+			"method": "GET",
+			"url": "/api/notes/{id}/",
+			"params": "id:string"
+		},
+		{
+			"method": "POST",
+			"url": "/api/notes/"
+		},
+		{
+			"method": "PUT",
+			"url": "/api/notes/{id}/",
+			"params": "id:string"
+		},
+		{
+			"method": "DELETE",
+			"url": "/api/notes/{id}/",
+			"params": "id:string"
+		}
+	],
+	"actions": [
+		{
+			"name": "Customers/list"
+		},
+		{
+			"name": "Customers/listWithDetails"
+		},
+		{
+			"name": "Customers/getWithDetails"
+		},
+		{
+			"name": "Customers/sortByDate"
+		},
+		{
+			"name": "Customers/filterByMonth"
+		},
+		{
+			"name": "Customers/search"
+		},
+		{
+			"name": "Customers/get"
+		},
+		{
+			"name": "Customers/create"
+		},
+		{
+			"name": "Customers/update"
+		},
+		{
+			"name": "Customers/remove"
+		},
+		{
+			"name": "Notes/list"
+		},
+		{
+			"name": "Notes/get"
+		},
+		{
+			"name": "Notes/create"
+		},
+		{
+			"name": "Notes/update"
+		},
+		{
+			"name": "Notes/remove"
+		},
+		{
+			"name": "Vehicles/list"
+		},
+		{
+			"name": "Vehicles/search"
+		},
+		{
+			"name": "Vehicles/get"
+		},
+		{
+			"name": "Vehicles/create"
+		},
+		{
+			"name": "Vehicles/update"
+		},
+		{
+			"name": "Vehicles/remove"
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"pid": 56060,
+	"date": "2026-07-17T21:04:39.359Z",
+	"stats": [
+		{
+			"id": "",
+			"version": {
+				"node": "v24.15.0",
+				"total": "5",
+				"build": 5018,
+				"app": "1.0.0"
+			},
+			"pid": 56060,
+			"mode": "debug",
+			"overload": 1,
+			"date": "2026-07-17T21:11:40.883Z",
+			"memory": 341.32,
+			"rm": 0,
+			"fm": 0,
+			"wm": 0,
+			"em": 0,
+			"mm": 0,
+			"om": 0,
+			"dm": 0,
+			"um": 0,
+			"pm": 0,
+			"sm": 0,
+			"cm": 0,
+			"dbrm": 0,
+			"dbwm": 0,
+			"usage": 0,
+			"requests": 412351,
+			"pending": 0,
+			"external": 0,
+			"errors": 0,
+			"timeouts": 0,
+			"online": 0,
+			"uptime": 7,
+			"download": 0,
+			"upload": 0
+		}
+	]
+}
